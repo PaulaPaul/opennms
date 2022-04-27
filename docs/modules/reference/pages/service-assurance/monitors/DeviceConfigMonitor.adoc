@@ -45,6 +45,11 @@ The default cron expression runs every 24 hrs at 12:00 a.m.
   One can use `ssh-keygen -l -f <(ssh-keyscan $TARGET)` to find the fingerprints of a remote system.
 | _unchecked_
 
+| auth-key
+| SSH Private key used to authenticate.
+  This must be specified in PEM format.
+| _unused_
+
 |===
 
 
