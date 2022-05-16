@@ -49,13 +49,6 @@
       <version>${opennmsApiVersion}</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>org.opennms.integration.api.sample</groupId>
-      <artifactId>sample-project</artifactId>
-      <version>${opennmsApiVersion}</version>
-      <type>xml</type>
-      <scope>provided</scope>
-    </dependency>
   </dependencies>
   <repositories>
     <repository>
