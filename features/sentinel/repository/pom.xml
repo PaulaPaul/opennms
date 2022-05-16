@@ -579,7 +579,7 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
-        </repository>   
+        </repository>
         <repository>
             <id>sonatype-public-repo</id>
             <url>https://maven.opennms.org/content/repositories/sonatype-public-repo/</url>
