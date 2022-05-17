@@ -89,9 +89,9 @@ public class DeviceConfigMonitorTest {
         var config = new byte[] {1, 2, 3};
         var filename = "filename";
 
-        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), any(), any(), any())).thenReturn(
+        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), null, any(), any(), any())).thenReturn(
                 CompletableFuture.completedFuture(Either.right(new Retriever.Success(config, filename)))
-        );
+                                                                                                                             );
 
         var pollStatus = deviceConfigMonitor.poll(svc, params);
 
@@ -109,9 +109,9 @@ public class DeviceConfigMonitorTest {
 
         var retrievalFailure = "retrieval failure";
 
-        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), any(), any(), any())).thenReturn(
+        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), null, any(), any(), any())).thenReturn(
                 CompletableFuture.completedFuture(Either.left(new Retriever.Failure(retrievalFailure)))
-        );
+                                                                                                                             );
 
         var pollStatus = deviceConfigMonitor.poll(svc, params);
 
@@ -160,9 +160,9 @@ public class DeviceConfigMonitorTest {
         final Retriever retriever = mock(Retriever.class);
 
         deviceConfigMonitor.setRetriever(retriever);
-        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), any(), any(), any())).thenReturn(
+        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), null, any(), any(), any())).thenReturn(
                 CompletableFuture.completedFuture(Either.left(new Retriever.Failure("didRun")))
-        );
+                                                                                                                             );
 
         PollStatus pollStatus = deviceConfigMonitor.poll(svc, params);
 
@@ -182,9 +182,9 @@ public class DeviceConfigMonitorTest {
         final Retriever retriever = mock(Retriever.class);
 
         deviceConfigMonitor.setRetriever(retriever);
-        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), any(), any(), any())).thenReturn(
+        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), null, any(), any(), any())).thenReturn(
                 CompletableFuture.completedFuture(Either.left(new Retriever.Failure("didRun")))
-        );
+                                                                                                                             );
 
         PollStatus pollStatus = deviceConfigMonitor.poll(svc, params);
 
@@ -196,9 +196,9 @@ public class DeviceConfigMonitorTest {
         final Retriever retriever = mock(Retriever.class);
 
         deviceConfigMonitor.setRetriever(retriever);
-        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), any(), any(), any())).thenReturn(
+        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), null, any(), any(), any())).thenReturn(
                 CompletableFuture.completedFuture(Either.left(new Retriever.Failure("didRun")))
-        );
+                                                                                                                             );
 
         return !deviceConfigMonitor.poll(svc, params).isUnknown();
     }
@@ -210,9 +210,9 @@ public class DeviceConfigMonitorTest {
         var deviceConfigMonitor = new DeviceConfigMonitor();
         deviceConfigMonitor.setRetriever(retriever);
 
-        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), any(), any(), any())).thenReturn(
+        when(retriever.retrieveConfig(any(), any(), any(), any(), any(), any(), any(), null, any(), any(), any())).thenReturn(
                 new CompletableFuture()
-        );
+                                                                                                                             );
 
         var pollStatus = deviceConfigMonitor.poll(svc, params);
 
