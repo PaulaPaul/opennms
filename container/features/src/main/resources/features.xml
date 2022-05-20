@@ -1956,6 +1956,7 @@
         <bundle>mvn:org.opennms.features.device-config/org.opennms.features.device-config.ssh-scripting/${project.version}</bundle>
         <bundle>mvn:org.opennms.features.device-config/org.opennms.features.device-config.retrieval/${project.version}</bundle>
         <bundle>mvn:org.opennms.features.device-config/org.opennms.features.device-config.monitor/${project.version}</bundle>
+        <bundle>wrap:mvn:net.i2p.crypto/eddsa/0.3.0$overwrite=full&amp;Export-Package=net.i2p.crypto.eddsa,net.i2p.crypto.eddsa.spec;resolution:=optional</bundle>
     </feature>
 
     <feature name="opennms-deviceconfig-rest" description="OpenNMS :: Features :: Device Config :: Rest" version="${project.version}">
